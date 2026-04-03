@@ -98,7 +98,7 @@ cd backend
 
 On Windows, use `mvnw.cmd spring-boot:run` instead.
 
-The API starts on **http://localhost:8080**.
+The API starts on **http://localhost:8081**.
 
 ### Frontend
 
@@ -116,7 +116,7 @@ The Vite dev server proxies `/api/*` requests to the backend automatically.
 
 ## Run instructions
 
-1. Start the backend first (port 8080).
+1. Start the backend first (port 8081).
 2. Start the frontend second (port 5173).
 3. Open **http://localhost:5173** in your browser.
 4. To stop either service, press `Ctrl+C` in its terminal.
@@ -126,10 +126,10 @@ The Vite dev server proxies `/api/*` requests to the backend automatically.
 | URL                                        | Description           |
 | ------------------------------------------ | --------------------- |
 | http://localhost:5173                       | App UI                |
-| http://localhost:8080/api/tasks             | API — all tasks       |
-| http://localhost:8080/api/tasks?q=api       | API — search by term  |
-| http://localhost:8080/api/tasks?status=OPEN | API — filter by status|
-| http://localhost:8080/h2-console            | H2 database console   |
+| http://localhost:8081/api/tasks             | API — all tasks       |
+| http://localhost:8081/api/tasks?q=api       | API — search by term  |
+| http://localhost:8081/api/tasks?status=OPEN | API — filter by status|
+| http://localhost:8081/h2-console            | H2 database console   |
 
 H2 console connection: JDBC URL `jdbc:h2:mem:taskdb`, username `sa`, no password.
 
@@ -142,7 +142,7 @@ H2 console connection: JDBC URL `jdbc:h2:mem:taskdb`, username `sa`, no password
 3. Select a status from the dropdown — results should filter further.
 4. Try the API directly:
    ```bash
-   curl "http://localhost:8080/api/tasks?q=api&page=1&pageSize=5"
+   curl "http://localhost:8081/api/tasks?q=api&page=1&pageSize=5"
    ```
 
 ---
@@ -201,7 +201,7 @@ After we review your submission, we will schedule a short call. Be ready to disc
 - Ensure Java 17+ is installed: `java --version`
 - On macOS, if you get `Permission denied`, run: `chmod +x backend/mvnw`
 - On Windows, use `mvnw.cmd` instead of `./mvnw`
-- Check that port 8080 is free: `lsof -i :8080` (macOS/Linux) or `netstat -ano | findstr :8080` (Windows)
+- Check that port 8081 is free: `lsof -i :8081` (macOS/Linux) or `netstat -ano | findstr :8081` (Windows)
 
 **Frontend won't start**
 - Ensure Node 18+ is installed: `node --version`
@@ -210,7 +210,7 @@ After we review your submission, we will schedule a short call. Be ready to disc
 
 **API returns errors in the browser console**
 - Make sure the backend is running before the frontend
-- The Vite proxy forwards `/api/*` to `localhost:8080` — if the backend is down, requests will fail
+- The Vite proxy forwards `/api/*` to `localhost:8081` — if the backend is down, requests will fail
 
 **H2 console won't connect**
 - Use JDBC URL: `jdbc:h2:mem:taskdb`
